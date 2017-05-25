@@ -51,6 +51,7 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -94,6 +95,19 @@ public class MainFrame extends javax.swing.JFrame {
         tbAnggota = new javax.swing.JTable();
         PrintAnggota = new javax.swing.JButton();
         DeleteAnggota = new javax.swing.JButton();
+        Nis = new javax.swing.JTextField();
+        NamaAnggota = new javax.swing.JTextField();
+        Kelas = new javax.swing.JTextField();
+        Telp = new javax.swing.JTextField();
+        vjak = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        dytk = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        rbLaki = new javax.swing.JRadioButton();
+        rbPerempuan = new javax.swing.JRadioButton();
+        ClearAnggota = new javax.swing.JButton();
+        SaveAnggota = new javax.swing.JButton();
         btPrint1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -344,6 +358,78 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jPanel3.add(DeleteAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 110, 30));
 
+        Nis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NisActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Nis, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 140, -1));
+
+        NamaAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NamaAnggotaActionPerformed(evt);
+            }
+        });
+        jPanel3.add(NamaAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 140, -1));
+
+        Kelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KelasActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Kelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 140, -1));
+
+        Telp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TelpActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Telp, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 140, -1));
+
+        vjak.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        vjak.setText("NIS");
+        jPanel3.add(vjak, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel12.setText("Nama");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        dytk.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        dytk.setText("Kelas");
+        jPanel3.add(dytk, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel13.setText("Jenis Kelamin");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setText("No Hp");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
+
+        buttonGroup1.add(rbLaki);
+        rbLaki.setText("Laki - Laki");
+        jPanel3.add(rbLaki, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, -1));
+
+        buttonGroup1.add(rbPerempuan);
+        rbPerempuan.setText("Perempuan");
+        jPanel3.add(rbPerempuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
+
+        ClearAnggota.setText("CLEAR");
+        ClearAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearAnggotaActionPerformed(evt);
+            }
+        });
+        jPanel3.add(ClearAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, 110, 30));
+
+        SaveAnggota.setText("SAVE");
+        SaveAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveAnggotaActionPerformed(evt);
+            }
+        });
+        jPanel3.add(SaveAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 110, 30));
+
         jTabbedPane1.addTab("Data Anggota", jPanel3);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 68, 730, -1));
@@ -551,11 +637,25 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void tbAnggotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbAnggotaMouseClicked
         // TODO add your handling code here:
+        int baris = tbAnggota.getSelectedRow();
+        if(baris != -1)
+        {
+            Nis.setText(tbAnggota.getValueAt(baris, 0).toString());
+            NamaAnggota.setText(tbAnggota.getValueAt(baris, 1).toString());
+            Kelas.setText(tbAnggota.getValueAt(baris, 2).toString());
+             String JK = tbAnggota.getValueAt(baris, 3).toString();
+            if (JK.equals("L"))
+                rbLaki.setSelected(true);
+            else
+                rbPerempuan.setSelected(true);
+            Telp.setText(tbAnggota.getValueAt(baris, 4).toString());
+
+        }
     }//GEN-LAST:event_tbAnggotaMouseClicked
 
     private void PrintAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintAnggotaActionPerformed
         // TODO add your handling code here:
-        MessageFormat header = new MessageFormat("Data Buku Perpustakaan");
+        MessageFormat header = new MessageFormat("Data Anggota Perpustakaan");
         MessageFormat footer = new MessageFormat("Page {0,number,integer} ");
         try
         {
@@ -569,16 +669,16 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void DeleteAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAnggotaActionPerformed
         // TODO add your handling code here:
-        int baris =  tbData.getSelectedRow();
+        int baris =  tbAnggota.getSelectedRow();
         if (baris != -1)
         {
-            String nis = tbData.getValueAt(baris, 0).toString();
+            String nis = tbAnggota.getValueAt(baris, 0).toString();
             String SQL = "DELETE FROM tb_anggota WHERE Nis='"+nis+"'";
             int status = KoneksiDB.execute(SQL);
             if (status==1)
             {
                 JOptionPane.showMessageDialog(this, "Data berhasil dihapus","Sukses",JOptionPane.INFORMATION_MESSAGE);
-                selectPinjam();
+                selectAnggota();
             }
             else
             {
@@ -645,6 +745,67 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SaveBukuActionPerformed
 
+    private void NisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NisActionPerformed
+
+    private void NamaAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaAnggotaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NamaAnggotaActionPerformed
+
+    private void KelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KelasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KelasActionPerformed
+
+    private void TelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TelpActionPerformed
+
+    private void ClearAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearAnggotaActionPerformed
+        // TODO add your handling code here:
+        Nis.setText("");
+        NamaAnggota.setText("");
+        Kelas.setText("");
+        Telp.setText("");
+        buttonGroup1.clearSelection();
+    }//GEN-LAST:event_ClearAnggotaActionPerformed
+
+    private void SaveAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveAnggotaActionPerformed
+        // TODO add your handling code here:
+         String JK = "";
+        if (rbLaki.isSelected())
+        {
+            JK = "L";   
+        }
+        if (rbPerempuan.isSelected())
+        {
+            JK = "P";
+        }
+
+        if( Nis.getText().equals("") || NamaAnggota.getText().equals("") || Kelas.getText().equals("") ||
+            JK.equals("") || Telp.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "Harap Lengkapi Data!","Error",JOptionPane.WARNING_MESSAGE);
+        }
+        else
+        {
+            String SQL = "INSERT INTO tb_anggota VALUES('"+Nis.getText()+"','"+NamaAnggota.getText()
+            +"','"+Kelas.getText()+"','"+JK+"','"+Telp.getText()+"')";
+            int status = KoneksiDB.execute(SQL);
+
+            if(status == 1)
+            {
+                JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan","Sukses",JOptionPane.INFORMATION_MESSAGE);
+                selectAnggota();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Data Gagal ditambahkan","Sukses",JOptionPane.WARNING_MESSAGE);
+            }
+
+        }
+    }//GEN-LAST:event_SaveAnggotaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -682,31 +843,42 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Biaya;
+    private javax.swing.JButton ClearAnggota;
     private javax.swing.JButton ClearBuku;
     private javax.swing.JButton DeleteAnggota;
     private javax.swing.JButton DeleteBuku;
     private javax.swing.JTextField Judul;
     private javax.swing.JTextField JudulBuku;
+    private javax.swing.JTextField Kelas;
     private com.toedter.calendar.JDateChooser Kembali;
     private javax.swing.JTextField Kode;
     private javax.swing.JTextField Nama;
+    private javax.swing.JTextField NamaAnggota;
+    private javax.swing.JTextField Nis;
     private javax.swing.JTextField Penulis;
     private com.toedter.calendar.JDateChooser Pinjam;
     private javax.swing.JButton PrintAnggota;
     private javax.swing.JButton PrintBuku;
+    private javax.swing.JButton SaveAnggota;
     private javax.swing.JButton SaveBuku;
     private javax.swing.JTextField Struk;
     private javax.swing.JTextField Tahun;
+    private javax.swing.JTextField Telp;
     private javax.swing.JButton btClear;
     private javax.swing.JButton btDelete;
     private javax.swing.JButton btHitung;
     private javax.swing.JButton btPrint;
     private javax.swing.JButton btPrint1;
     private javax.swing.JButton btSave;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbBuku;
+    private javax.swing.JLabel dytk;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -722,9 +894,12 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JRadioButton rbLaki;
+    private javax.swing.JRadioButton rbPerempuan;
     private javax.swing.JTable tbAnggota;
     private javax.swing.JTable tbBuku;
     private javax.swing.JTable tbData;
+    private javax.swing.JLabel vjak;
     // End of variables declaration//GEN-END:variables
 
     private void selectPinjam() {
