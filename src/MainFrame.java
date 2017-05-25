@@ -38,6 +38,8 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         initComponents();
         selectPinjam();
+        selectBuku();
+        selectAnggota();
     }
 
     /**
@@ -71,7 +73,27 @@ public class MainFrame extends javax.swing.JFrame {
         btClear = new javax.swing.JButton();
         btDelete = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbBuku = new javax.swing.JTable();
+        PrintBuku = new javax.swing.JButton();
+        DeleteBuku = new javax.swing.JButton();
+        Tahun = new javax.swing.JTextField();
+        Kode = new javax.swing.JTextField();
+        JudulBuku = new javax.swing.JTextField();
+        Penulis = new javax.swing.JTextField();
+        cbBuku = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        ClearBuku = new javax.swing.JButton();
+        SaveBuku = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tbAnggota = new javax.swing.JTable();
+        PrintAnggota = new javax.swing.JButton();
+        DeleteAnggota = new javax.swing.JButton();
         btPrint1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,7 +107,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Nama Peminjam");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         btPrint.setText("PRINT");
         btPrint.addActionListener(new java.awt.event.ActionListener() {
@@ -101,22 +123,22 @@ public class MainFrame extends javax.swing.JFrame {
                 btHitungActionPerformed(evt);
             }
         });
-        jPanel1.add(btHitung, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, 110, 30));
+        jPanel1.add(btHitung, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 110, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Nomor Struk");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Tanggal Pinjam");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
-        jPanel1.add(Pinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 140, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
+        jPanel1.add(Pinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 140, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Judul Buku");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-        jPanel1.add(Judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 140, -1));
-        jPanel1.add(Kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 140, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        jPanel1.add(Judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 140, -1));
+        jPanel1.add(Kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 140, -1));
 
         tbData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,19 +159,19 @@ public class MainFrame extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbData);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 700, 180));
-        jPanel1.add(Struk, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 140, -1));
+        jPanel1.add(Struk, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 140, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Tanggal Kembali");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Biaya");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
-        jPanel1.add(Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 140, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, -1, -1));
+        jPanel1.add(Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 140, -1));
 
         Biaya.setEditable(false);
-        jPanel1.add(Biaya, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 140, -1));
+        jPanel1.add(Biaya, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 140, -1));
 
         btSave.setText("SAVE");
         btSave.addActionListener(new java.awt.event.ActionListener() {
@@ -157,7 +179,7 @@ public class MainFrame extends javax.swing.JFrame {
                 btSaveActionPerformed(evt);
             }
         });
-        jPanel1.add(btSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 110, 30));
+        jPanel1.add(btSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 110, 30));
 
         btClear.setText("CLEAR");
         btClear.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +187,7 @@ public class MainFrame extends javax.swing.JFrame {
                 btClearActionPerformed(evt);
             }
         });
-        jPanel1.add(btClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 110, 30));
+        jPanel1.add(btClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, 110, 30));
 
         btDelete.setText("DELETE");
         btDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -178,12 +200,153 @@ public class MainFrame extends javax.swing.JFrame {
         jTabbedPane1.addTab("Data Peminjaman", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tbBuku.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Kode Buku", "Judul Buku", "Penulis Buku", "Kategori", "Tahun Rilis"
+            }
+        ));
+        tbBuku.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbBukuMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tbBuku);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 700, 160));
+
+        PrintBuku.setText("PRINT");
+        PrintBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrintBukuActionPerformed(evt);
+            }
+        });
+        jPanel2.add(PrintBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 110, 30));
+
+        DeleteBuku.setText("DELETE");
+        DeleteBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteBukuActionPerformed(evt);
+            }
+        });
+        jPanel2.add(DeleteBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 110, 30));
+
+        Tahun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TahunActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Tahun, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 140, -1));
+
+        Kode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KodeActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Kode, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 140, -1));
+
+        JudulBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JudulBukuActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JudulBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 140, -1));
+
+        Penulis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PenulisActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Penulis, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 140, -1));
+
+        cbBuku.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pelajaran", "Novel", "Referensi", "Tips" }));
+        jPanel2.add(cbBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 140, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setText("Tahun Rilis");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setText("Kode Buku");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel9.setText("Judul Buku");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel10.setText("Penulis");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel11.setText("Kategori Buku");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
+
+        ClearBuku.setText("CLEAR");
+        ClearBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearBukuActionPerformed(evt);
+            }
+        });
+        jPanel2.add(ClearBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 110, 30));
+
+        SaveBuku.setText("SAVE");
+        SaveBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveBukuActionPerformed(evt);
+            }
+        });
+        jPanel2.add(SaveBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 110, 30));
+
         jTabbedPane1.addTab("Data Buku", jPanel2);
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tbAnggota.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "NIS", "Nama", "Kelas", "Jenis Kelamin", "No Hp"
+            }
+        ));
+        tbAnggota.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbAnggotaMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tbAnggota);
+
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 700, 160));
+
+        PrintAnggota.setText("PRINT");
+        PrintAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrintAnggotaActionPerformed(evt);
+            }
+        });
+        jPanel3.add(PrintAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 110, 30));
+
+        DeleteAnggota.setText("DELETE");
+        DeleteAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteAnggotaActionPerformed(evt);
+            }
+        });
+        jPanel3.add(DeleteAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 110, 30));
+
         jTabbedPane1.addTab("Data Anggota", jPanel3);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 730, 450));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 68, 730, -1));
 
         btPrint1.setText("EXIT");
         btPrint1.addActionListener(new java.awt.event.ActionListener() {
@@ -334,6 +497,154 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btDeleteActionPerformed
 
+    private void tbBukuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbBukuMouseClicked
+        // TODO add your handling code here:
+        int baris = tbBuku.getSelectedRow();
+        if(baris != -1)
+        {
+            Kode.setText(tbBuku.getValueAt(baris, 0).toString());
+            JudulBuku.setText(tbBuku.getValueAt(baris, 1).toString());
+            Penulis.setText(tbBuku.getValueAt(baris, 2).toString());
+            cbBuku.setSelectedItem(tbBuku.getValueAt(baris, 3).toString());
+            Tahun.setText(tbBuku.getValueAt(baris, 4).toString());
+
+        }
+    }//GEN-LAST:event_tbBukuMouseClicked
+
+    private void DeleteBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBukuActionPerformed
+        // TODO add your handling code here:
+        int baris =  tbBuku.getSelectedRow();
+        if (baris != -1)
+        {
+            String kode = tbBuku.getValueAt(baris, 0).toString();
+            String SQL = "DELETE FROM tb_buku WHERE Kode='"+kode+"'";
+            int status = KoneksiDB.execute(SQL);
+            if (status==1)
+            {
+                JOptionPane.showMessageDialog(this, "Data berhasil dihapus","Sukses",JOptionPane.INFORMATION_MESSAGE);
+                selectBuku();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Data gagal dihapus","Gagal",JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Pilih Baris Data Terlebih dahulu","Error",JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_DeleteBukuActionPerformed
+
+    private void PrintBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintBukuActionPerformed
+        // TODO add your handling code here:
+        MessageFormat header = new MessageFormat("Data Buku Perpustakaan");
+        MessageFormat footer = new MessageFormat("Page {0,number,integer} ");
+        try
+        {
+            tbBuku.print(JTable.PrintMode.FIT_WIDTH, header, footer, true, null, true, null);
+        }
+        catch (java.awt.print.PrinterException e)
+        {
+            System.err.format("Cannot print %a%n", e.getMessage());
+        }
+    }//GEN-LAST:event_PrintBukuActionPerformed
+
+    private void tbAnggotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbAnggotaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbAnggotaMouseClicked
+
+    private void PrintAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintAnggotaActionPerformed
+        // TODO add your handling code here:
+        MessageFormat header = new MessageFormat("Data Buku Perpustakaan");
+        MessageFormat footer = new MessageFormat("Page {0,number,integer} ");
+        try
+        {
+            tbAnggota.print(JTable.PrintMode.FIT_WIDTH, header, footer, true, null, true, null);
+        }
+        catch (java.awt.print.PrinterException e)
+        {
+            System.err.format("Cannot print %a%n", e.getMessage());
+        }
+    }//GEN-LAST:event_PrintAnggotaActionPerformed
+
+    private void DeleteAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAnggotaActionPerformed
+        // TODO add your handling code here:
+        int baris =  tbData.getSelectedRow();
+        if (baris != -1)
+        {
+            String nis = tbData.getValueAt(baris, 0).toString();
+            String SQL = "DELETE FROM tb_anggota WHERE Nis='"+nis+"'";
+            int status = KoneksiDB.execute(SQL);
+            if (status==1)
+            {
+                JOptionPane.showMessageDialog(this, "Data berhasil dihapus","Sukses",JOptionPane.INFORMATION_MESSAGE);
+                selectPinjam();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Data gagal dihapus","Gagal",JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Pilih Baris Data Terlebih dahulu","Error",JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_DeleteAnggotaActionPerformed
+
+    private void TahunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TahunActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TahunActionPerformed
+
+    private void KodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_KodeActionPerformed
+
+    private void JudulBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JudulBukuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JudulBukuActionPerformed
+
+    private void PenulisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PenulisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PenulisActionPerformed
+
+    private void ClearBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearBukuActionPerformed
+        // TODO add your handling code here:
+        Kode.setText("");
+        JudulBuku.setText("");
+        Tahun.setText("");
+        Penulis.setText("");
+        cbBuku.setSelectedItem(null);
+    }//GEN-LAST:event_ClearBukuActionPerformed
+
+    private void SaveBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBukuActionPerformed
+        // TODO add your handling code here:
+        
+        String kategori = cbBuku.getSelectedItem().toString();
+
+        if( JudulBuku.getText().equals("") || Penulis.getText().equals("") || Tahun.getText().equals("") ||
+            kategori.equals("") || Kode.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "Harap Lengkapi Data!","Error",JOptionPane.WARNING_MESSAGE);
+        }
+        else
+        {
+            String SQL = "INSERT INTO tb_buku VALUES('"+Kode.getText()+"','"+JudulBuku.getText()
+            +"','"+Penulis.getText()+"','"+kategori+"','"+Tahun.getText()+"')";
+            int status = KoneksiDB.execute(SQL);
+
+            if(status == 1)
+            {
+                JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan","Sukses",JOptionPane.INFORMATION_MESSAGE);
+                selectBuku();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Data Gagal ditambahkan","Sukses",JOptionPane.WARNING_MESSAGE);
+            }
+
+        }
+    }//GEN-LAST:event_SaveBukuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -371,28 +682,48 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Biaya;
+    private javax.swing.JButton ClearBuku;
+    private javax.swing.JButton DeleteAnggota;
+    private javax.swing.JButton DeleteBuku;
     private javax.swing.JTextField Judul;
+    private javax.swing.JTextField JudulBuku;
     private com.toedter.calendar.JDateChooser Kembali;
+    private javax.swing.JTextField Kode;
     private javax.swing.JTextField Nama;
+    private javax.swing.JTextField Penulis;
     private com.toedter.calendar.JDateChooser Pinjam;
+    private javax.swing.JButton PrintAnggota;
+    private javax.swing.JButton PrintBuku;
+    private javax.swing.JButton SaveBuku;
     private javax.swing.JTextField Struk;
+    private javax.swing.JTextField Tahun;
     private javax.swing.JButton btClear;
     private javax.swing.JButton btDelete;
     private javax.swing.JButton btHitung;
     private javax.swing.JButton btPrint;
     private javax.swing.JButton btPrint1;
     private javax.swing.JButton btSave;
+    private javax.swing.JComboBox<String> cbBuku;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable tbAnggota;
+    private javax.swing.JTable tbBuku;
     private javax.swing.JTable tbData;
     // End of variables declaration//GEN-END:variables
 
@@ -423,5 +754,62 @@ public class MainFrame extends javax.swing.JFrame {
             
         }
         tbData.setModel(dtm);
+    }
+    
+    private void selectBuku() {
+        String kolom[] = {"Kode","Judul","Penulis","Kategori","Tahun"};
+        DefaultTableModel dtm = new DefaultTableModel(null,kolom);
+        String SQL = "SELECT * FROM `tb_buku`";
+        ResultSet rs = KoneksiDB.executeQuery(SQL);
+        try
+        {
+            while (rs.next())
+            {
+                
+                String Kode = rs.getString(1);
+                String Judul = rs.getString(2);
+                String Penulis = rs.getString(3);
+                String Kategori = rs.getString(4);
+                String Tahun = rs.getString(5);
+                String data[] = {Kode,Judul,Penulis,Kategori,Tahun};
+                dtm.addRow(data);
+                        
+            }
+        }
+        catch (SQLException ex)
+        {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE,null,ex);
+            
+        }
+        tbBuku.setModel(dtm);
+    }
+    
+    private void selectAnggota()
+    {
+        String kolom[] = {"Nis","Nama","Kelas","JK","Telp"};
+        DefaultTableModel dtm = new DefaultTableModel(null,kolom);
+        String SQL = "SELECT * FROM `tb_anggota`";
+        ResultSet rs = KoneksiDB.executeQuery(SQL);
+        try
+        {
+            while (rs.next())
+            {
+                
+                String Nis = rs.getString(1);
+                String Nama = rs.getString(2);
+                String Kelas = rs.getString(3);
+                String JK = rs.getString(4);
+                String Telp = rs.getString(5);
+                String data[] = {Nis,Nama,Kelas,JK,Telp};
+                dtm.addRow(data);
+                        
+            }
+        }
+        catch (SQLException ex)
+        {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE,null,ex);
+            
+        }
+        tbAnggota.setModel(dtm);
     }
 }
