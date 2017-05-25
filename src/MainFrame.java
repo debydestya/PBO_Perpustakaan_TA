@@ -1,3 +1,25 @@
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static java.lang.Math.toIntExact;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.MessageFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.Timer;
+import javax.swing.table.DefaultTableModel;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +37,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        selectPinjam();
     }
 
     /**
@@ -26,11 +49,290 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        btPrint = new javax.swing.JButton();
+        btHitung = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Pinjam = new com.toedter.calendar.JDateChooser();
+        jLabel6 = new javax.swing.JLabel();
+        Judul = new javax.swing.JTextField();
+        Kembali = new com.toedter.calendar.JDateChooser();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbData = new javax.swing.JTable();
+        Struk = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Nama = new javax.swing.JTextField();
+        Biaya = new javax.swing.JTextField();
+        btSave = new javax.swing.JButton();
+        btClear = new javax.swing.JButton();
+        btDelete = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        btPrint1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(753, 551));
+        setPreferredSize(new java.awt.Dimension(753, 551));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTabbedPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setText("Nama Peminjam");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        btPrint.setText("PRINT");
+        btPrint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPrintActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 110, 30));
+
+        btHitung.setText("HITUNG");
+        btHitung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHitungActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btHitung, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, 110, 30));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setText("Nomor Struk");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setText("Tanggal Pinjam");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
+        jPanel1.add(Pinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 140, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setText("Judul Buku");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jPanel1.add(Judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 140, -1));
+        jPanel1.add(Kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 140, -1));
+
+        tbData.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "NoStruk", "Judul Buku", "Nama", "TanggalPinjam", "TanggalKembali", "Biaya"
+            }
+        ));
+        tbData.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbDataMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tbData);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 700, 180));
+        jPanel1.add(Struk, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 140, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setText("Tanggal Kembali");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("Biaya");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
+        jPanel1.add(Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 140, -1));
+
+        Biaya.setEditable(false);
+        jPanel1.add(Biaya, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 140, -1));
+
+        btSave.setText("SAVE");
+        btSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSaveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 110, 30));
+
+        btClear.setText("CLEAR");
+        btClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btClearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 110, 30));
+
+        btDelete.setText("DELETE");
+        btDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btDeleteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 110, 30));
+
+        jTabbedPane1.addTab("Data Peminjaman", jPanel1);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane1.addTab("Data Buku", jPanel2);
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane1.addTab("Data Anggota", jPanel3);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 730, 450));
+
+        btPrint1.setText("EXIT");
+        btPrint1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPrint1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btPrint1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 110, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrintActionPerformed
+        MessageFormat header = new MessageFormat("Data peminjaman buku");
+        MessageFormat footer = new MessageFormat("Page {0,number,integer} ");
+        try
+        {
+            tbData.print(JTable.PrintMode.FIT_WIDTH, header, footer, true, null, true, null);
+        }
+        catch (java.awt.print.PrinterException e)
+        {
+            System.err.format("Cannot print %a%n", e.getMessage());
+        }
+    }//GEN-LAST:event_btPrintActionPerformed
+
+    private void btPrint1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrint1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btPrint1ActionPerformed
+
+    private void btHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHitungActionPerformed
+        Date pinjam = Pinjam.getDate();
+        Date kembali = Kembali.getDate();
+        long startTime = pinjam.getTime();
+        long endTime = kembali.getTime();
+        long bedaTime = endTime - startTime;
+        long bedaHari = bedaTime / (1000 * 60 * 60 * 24);
+        DateFormat dateFormat = DateFormat.getDateInstance();
+
+        int lama = toIntExact(bedaHari);
+        if (lama > 3)
+        {
+            int total = lama * 20000;
+            String harga = Integer.toString(total);
+            Biaya.setText(harga);
+        }
+        else
+        {
+            int total = 0;
+            String harga = Integer.toString(total);
+            Biaya.setText(harga);
+        }
+        
+       
+    }//GEN-LAST:event_btHitungActionPerformed
+
+    private void tbDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbDataMouseClicked
+        int baris = tbData.getSelectedRow();
+        if(baris != -1)
+        {
+            Struk.setText(tbData.getValueAt(baris, 0).toString());
+            Judul.setText(tbData.getValueAt(baris, 1).toString());
+            Nama.setText(tbData.getValueAt(baris, 2).toString());
+            SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
+            Date dateFormat = null;
+            try
+            {
+                dateFormat = date.parse(tbData.getValueAt(baris, 3).toString());
+            }
+            catch (ParseException ex)
+            {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Pinjam.setDate(dateFormat);
+
+            try
+            {
+                dateFormat = date.parse(tbData.getValueAt(baris, 4).toString());
+            }
+            catch (ParseException ex)
+            {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Kembali.setDate(dateFormat);
+            Biaya.setText(tbData.getValueAt(baris, 5).toString());
+
+        }
+    }//GEN-LAST:event_tbDataMouseClicked
+
+    private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String pinjam = dateFormat.format(Pinjam.getDate());
+        String kembali = dateFormat.format(Kembali.getDate());
+
+        if( Biaya.getText().equals("") || pinjam.equals("") || kembali.equals("") ||
+            Nama.getText().equals("") || Judul.getText().equals("") ||
+            Struk.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "Harap Lengkapi Data / Hitung terlebih dahulu !","Error",JOptionPane.WARNING_MESSAGE);
+        }
+        else
+        {
+            String SQL = "INSERT INTO tb_pinjam VALUES('"+Struk.getText()+"','"+Nama.getText()
+            +"','"+Judul.getText()+"','"+pinjam+"','"+kembali+"','"+Biaya.getText()+"')";
+            int status = KoneksiDB.execute(SQL);
+
+            if(status == 1)
+            {
+                JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan","Sukses",JOptionPane.INFORMATION_MESSAGE);
+                selectPinjam();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Data Gagal ditambahkan","Sukses",JOptionPane.WARNING_MESSAGE);
+            }
+
+        }
+    }//GEN-LAST:event_btSaveActionPerformed
+
+    private void btClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClearActionPerformed
+        Nama.setText("");
+        Struk.setText("");
+        Judul.setText("");
+        Biaya.setText("");
+        Pinjam.setCalendar(null);
+        Kembali.setCalendar(null);
+    }//GEN-LAST:event_btClearActionPerformed
+
+    private void btDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeleteActionPerformed
+        int baris =  tbData.getSelectedRow();
+        if (baris != -1)
+        {
+            String struk = tbData.getValueAt(baris, 0).toString();
+            String SQL = "DELETE FROM tb_pinjam WHERE Struk='"+struk+"'";
+            int status = KoneksiDB.execute(SQL);
+            if (status==1)
+            {
+                JOptionPane.showMessageDialog(this, "Data berhasil dihapus","Sukses",JOptionPane.INFORMATION_MESSAGE);
+                selectPinjam();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Data gagal dihapus","Gagal",JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Pilih Baris Data Terlebih dahulu","Error",JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -68,5 +370,58 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Biaya;
+    private javax.swing.JTextField Judul;
+    private com.toedter.calendar.JDateChooser Kembali;
+    private javax.swing.JTextField Nama;
+    private com.toedter.calendar.JDateChooser Pinjam;
+    private javax.swing.JTextField Struk;
+    private javax.swing.JButton btClear;
+    private javax.swing.JButton btDelete;
+    private javax.swing.JButton btHitung;
+    private javax.swing.JButton btPrint;
+    private javax.swing.JButton btPrint1;
+    private javax.swing.JButton btSave;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable tbData;
     // End of variables declaration//GEN-END:variables
+
+    private void selectPinjam() {
+        String kolom[] = {"Struk","Nama","Judul","Pinjam","Kembali","Biaya"};
+        DefaultTableModel dtm = new DefaultTableModel(null,kolom);
+        String SQL = "SELECT * FROM `tb_pinjam`";
+        ResultSet rs = KoneksiDB.executeQuery(SQL);
+        try
+        {
+            while (rs.next())
+            {
+                
+                String Struk = rs.getString(1);
+                String Nama = rs.getString(2);
+                String Judul = rs.getString(3);
+                String Pinjam = rs.getString(4);
+                String Kembali = rs.getString(5);
+                String Biaya = rs.getString(6);
+                String data[] = {Struk,Judul,Nama,Pinjam,Kembali,Biaya};
+                dtm.addRow(data);
+                        
+            }
+        }
+        catch (SQLException ex)
+        {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE,null,ex);
+            
+        }
+        tbData.setModel(dtm);
+    }
 }
