@@ -118,7 +118,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         try
         {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_utspbo?zeroDateTimeBehavior=convertToNull", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_perpuspbo?zeroDateTimeBehavior=convertToNull", "root", "");
             ps = connection.prepareStatement("SELECT * FROM `tb_akun` WHERE username = ? AND password = ? ");
             ps.setString(1, tfUser.getText());
             ps.setString(2, tfPass.getText());
