@@ -76,6 +76,7 @@ public class MainFrame extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel15 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbBuku = new javax.swing.JTable();
@@ -98,6 +99,7 @@ public class MainFrame extends javax.swing.JFrame {
         cbCariBuku = new javax.swing.JComboBox<>();
         SearchBuku = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbAnggota = new javax.swing.JTable();
@@ -117,11 +119,17 @@ public class MainFrame extends javax.swing.JFrame {
         ClearAnggota = new javax.swing.JButton();
         SaveAnggota = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
         btPrint1 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(770, 600));
-        setPreferredSize(new java.awt.Dimension(770, 600));
+        setTitle("Perpustakaan Telkom School");
+        setBackground(new java.awt.Color(162, 5, 20));
+        setMinimumSize(new java.awt.Dimension(760, 580));
+        setPreferredSize(new java.awt.Dimension(760, 580));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -129,6 +137,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nama Peminjam");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
@@ -149,18 +158,25 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1.add(btHitung, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 110, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nomor Struk");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Tanggal Pinjam");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
+
+        Pinjam.setBackground(new java.awt.Color(209, 37, 37));
         jPanel1.add(Pinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 140, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Judul Buku");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
         jPanel1.add(Judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 140, -1));
+
+        Kembali.setBackground(new java.awt.Color(209, 37, 37));
         jPanel1.add(Kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 140, -1));
 
         tbData.setModel(new javax.swing.table.DefaultTableModel(
@@ -185,10 +201,12 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1.add(Struk, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 140, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Tanggal Kembali");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Biaya");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, -1));
         jPanel1.add(Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 140, -1));
@@ -229,8 +247,12 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 530, 50));
 
         jLabel15.setFont(new java.awt.Font("Amarillo", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Peminjaman Buku Perpustakaan");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 380, 40));
+
+        jPanel6.setBackground(new java.awt.Color(209, 37, 37));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 410));
 
         jTabbedPane1.addTab("Data Peminjaman", jPanel1);
 
@@ -304,18 +326,22 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2.add(cbBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 140, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Tahun Rilis");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Kode Buku");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Judul Buku");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Penulis");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
@@ -336,9 +362,11 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2.add(SaveBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 110, 30));
 
         jLabel16.setFont(new java.awt.Font("Amarillo", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Koleksi Buku Perpustakaan");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 320, 40));
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Cari Buku Berdasarkan Kategori"));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -360,8 +388,12 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 170, 120));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Kategori Buku");
         jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
+
+        jPanel7.setBackground(new java.awt.Color(209, 37, 37));
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 410));
 
         jTabbedPane1.addTab("Data Buku", jPanel2);
 
@@ -432,30 +464,37 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel3.add(Telp, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 140, -1));
 
         vjak.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        vjak.setForeground(new java.awt.Color(255, 255, 255));
         vjak.setText("NIS");
         jPanel3.add(vjak, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Nama");
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         dytk.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        dytk.setForeground(new java.awt.Color(255, 255, 255));
         dytk.setText("Kelas");
         jPanel3.add(dytk, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Jenis Kelamin");
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("No Hp");
         jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
 
         buttonGroup1.add(rbLaki);
+        rbLaki.setForeground(new java.awt.Color(255, 255, 255));
         rbLaki.setText("Laki - Laki");
         jPanel3.add(rbLaki, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, -1, -1));
 
         buttonGroup1.add(rbPerempuan);
+        rbPerempuan.setForeground(new java.awt.Color(255, 255, 255));
         rbPerempuan.setText("Perempuan");
         jPanel3.add(rbPerempuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
 
@@ -476,8 +515,12 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel3.add(SaveAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 110, 30));
 
         jLabel17.setFont(new java.awt.Font("Amarillo", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Daftar Anggota Perpustakaan");
-        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 380, 40));
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 360, 40));
+
+        jPanel8.setBackground(new java.awt.Color(209, 37, 37));
+        jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 410));
 
         jTabbedPane1.addTab("Data Anggota", jPanel3);
 
@@ -490,6 +533,14 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btPrint1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 110, 30));
+
+        jLabel11.setFont(new java.awt.Font("American Captain", 0, 36)); // NOI18N
+        jLabel11.setText("PERPUSTAKAAN TELKOM SCHOOL MALANG");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 730, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -508,7 +559,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btPrintActionPerformed
 
     private void btPrint1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrint1ActionPerformed
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_btPrint1ActionPerformed
 
     private void btHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHitungActionPerformed
@@ -957,6 +1008,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel dytk;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -977,6 +1029,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
