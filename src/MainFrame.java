@@ -73,6 +73,9 @@ public class MainFrame extends javax.swing.JFrame {
         btSave = new javax.swing.JButton();
         btClear = new javax.swing.JButton();
         btDelete = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel15 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbBuku = new javax.swing.JTable();
@@ -87,9 +90,14 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         ClearBuku = new javax.swing.JButton();
         SaveBuku = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        cbCariBuku = new javax.swing.JComboBox<>();
+        SearchBuku = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbAnggota = new javax.swing.JTable();
@@ -108,11 +116,12 @@ public class MainFrame extends javax.swing.JFrame {
         rbPerempuan = new javax.swing.JRadioButton();
         ClearAnggota = new javax.swing.JButton();
         SaveAnggota = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
         btPrint1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(753, 551));
-        setPreferredSize(new java.awt.Dimension(753, 551));
+        setMinimumSize(new java.awt.Dimension(770, 600));
+        setPreferredSize(new java.awt.Dimension(770, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -121,7 +130,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Nama Peminjam");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         btPrint.setText("PRINT");
         btPrint.addActionListener(new java.awt.event.ActionListener() {
@@ -141,18 +150,18 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Nomor Struk");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Tanggal Pinjam");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
-        jPanel1.add(Pinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 140, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
+        jPanel1.add(Pinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 140, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Judul Buku");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
-        jPanel1.add(Judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 140, -1));
-        jPanel1.add(Kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 140, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        jPanel1.add(Judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 140, -1));
+        jPanel1.add(Kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 140, -1));
 
         tbData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -172,20 +181,20 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbData);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 700, 180));
-        jPanel1.add(Struk, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 140, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 700, 170));
+        jPanel1.add(Struk, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 140, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Tanggal Kembali");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Biaya");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, -1, -1));
-        jPanel1.add(Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 140, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, -1));
+        jPanel1.add(Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 140, -1));
 
         Biaya.setEditable(false);
-        jPanel1.add(Biaya, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 140, -1));
+        jPanel1.add(Biaya, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 140, -1));
 
         btSave.setText("SAVE");
         btSave.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +219,18 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 110, 30));
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Biaya < 3 hari = Rp. 0 \t\t|| Biaya > 3 hari = Rp.500/hari\nPastikan untuk cek biaya sebelum memasukkan data peminjaman");
+        jScrollPane4.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 530, 50));
+
+        jLabel15.setFont(new java.awt.Font("Amarillo", 0, 18)); // NOI18N
+        jLabel15.setText("Peminjaman Buku Perpustakaan");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 380, 40));
 
         jTabbedPane1.addTab("Data Peminjaman", jPanel1);
 
@@ -298,17 +319,13 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel10.setText("Penulis");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel11.setText("Kategori Buku");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
-
         ClearBuku.setText("CLEAR");
         ClearBuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ClearBukuActionPerformed(evt);
             }
         });
-        jPanel2.add(ClearBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 110, 30));
+        jPanel2.add(ClearBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 110, 30));
 
         SaveBuku.setText("SAVE");
         SaveBuku.addActionListener(new java.awt.event.ActionListener() {
@@ -316,7 +333,35 @@ public class MainFrame extends javax.swing.JFrame {
                 SaveBukuActionPerformed(evt);
             }
         });
-        jPanel2.add(SaveBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 110, 30));
+        jPanel2.add(SaveBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 110, 30));
+
+        jLabel16.setFont(new java.awt.Font("Amarillo", 0, 18)); // NOI18N
+        jLabel16.setText("Koleksi Buku Perpustakaan");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 320, 40));
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Cari Buku Berdasarkan Kategori"));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel19.setText("Kategori Buku");
+        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+
+        cbCariBuku.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pelajaran", "Novel", "Referensi", "Tips" }));
+        jPanel4.add(cbCariBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 140, -1));
+
+        SearchBuku.setText("SEARCH");
+        SearchBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchBukuActionPerformed(evt);
+            }
+        });
+        jPanel4.add(SearchBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 110, 30));
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 170, 120));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel20.setText("Kategori Buku");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
 
         jTabbedPane1.addTab("Data Buku", jPanel2);
 
@@ -430,6 +475,10 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jPanel3.add(SaveAnggota, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 110, 30));
 
+        jLabel17.setFont(new java.awt.Font("Amarillo", 0, 18)); // NOI18N
+        jLabel17.setText("Daftar Anggota Perpustakaan");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 380, 40));
+
         jTabbedPane1.addTab("Data Anggota", jPanel3);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 68, 730, -1));
@@ -525,6 +574,7 @@ public class MainFrame extends javax.swing.JFrame {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String pinjam = dateFormat.format(Pinjam.getDate());
         String kembali = dateFormat.format(Kembali.getDate());
+        Biaya();
 
         if( Biaya.getText().equals("") || pinjam.equals("") || kembali.equals("") ||
             Nama.getText().equals("") || Judul.getText().equals("") ||
@@ -806,6 +856,36 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SaveAnggotaActionPerformed
 
+    private void SearchBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBukuActionPerformed
+        // TODO add your handling code here:
+        PreparedStatement ps;
+        Connection connection;
+        String kategori = cbCariBuku.getSelectedItem().toString();
+        
+        try{connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_perpuspbo?zeroDateTimeBehavior=convertToNull", "root", "");
+            String kolom[] = {"KodeBuku","JudulBuku","PenulisBuku","KategoriBuku","TahunBuku"};
+            DefaultTableModel dtm = new DefaultTableModel(null,kolom);
+            ps = connection.prepareStatement("SELECT `Kode`,`Judul`,`Penulis`,`Kategori`,`Tahun` FROM `tb_buku` "
+                + "                         WHERE Kategori = ?");
+            ps.setString(1, kategori);
+            ResultSet rs = ps.executeQuery();
+            try{while(rs.next()){
+                String KodeBuku = rs.getString(1);
+                String JudulBuku = rs.getString(2);
+                String PenulisBuku = rs.getString(3);
+                String KategoriBuku = rs.getString(4);
+                String TahunBuku = rs.getString(5);
+                String data[] = {KodeBuku,JudulBuku,PenulisBuku,KategoriBuku,TahunBuku};
+                dtm.addRow(data);   }
+        } catch (SQLException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE,null,ex);
+        } tbBuku.setModel(dtm);
+        } catch (SQLException ex){
+            JOptionPane.showMessageDialog(rootPane, "Gagal");
+        }
+
+    }//GEN-LAST:event_SearchBukuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -861,6 +941,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton PrintBuku;
     private javax.swing.JButton SaveAnggota;
     private javax.swing.JButton SaveBuku;
+    private javax.swing.JButton SearchBuku;
     private javax.swing.JTextField Struk;
     private javax.swing.JTextField Tahun;
     private javax.swing.JTextField Telp;
@@ -872,14 +953,19 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btSave;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbBuku;
+    private javax.swing.JComboBox<String> cbCariBuku;
     private javax.swing.JLabel dytk;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -890,10 +976,13 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JRadioButton rbLaki;
     private javax.swing.JRadioButton rbPerempuan;
     private javax.swing.JTable tbAnggota;
@@ -913,8 +1002,8 @@ public class MainFrame extends javax.swing.JFrame {
             {
                 
                 String Struk = rs.getString(1);
-                String Nama = rs.getString(2);
-                String Judul = rs.getString(3);
+                String Nama = rs.getString(3);
+                String Judul = rs.getString(2);
                 String Pinjam = rs.getString(4);
                 String Kembali = rs.getString(5);
                 String Biaya = rs.getString(6);
@@ -986,5 +1075,30 @@ public class MainFrame extends javax.swing.JFrame {
             
         }
         tbAnggota.setModel(dtm);
+    }
+    
+    public void Biaya()
+    {
+        Date pinjam = Pinjam.getDate();
+        Date kembali = Kembali.getDate();
+        long startTime = pinjam.getTime();
+        long endTime = kembali.getTime();
+        long bedaTime = endTime - startTime;
+        long bedaHari = bedaTime / (1000 * 60 * 60 * 24);
+        DateFormat dateFormat = DateFormat.getDateInstance();
+
+        int lama = toIntExact(bedaHari);
+        if (lama > 3)
+        {
+            int total = lama * 20000;
+            String harga = Integer.toString(total);
+            Biaya.setText(harga);
+        }
+        else
+        {
+            int total = 0;
+            String harga = Integer.toString(total);
+            Biaya.setText(harga);
+        }
     }
 }
